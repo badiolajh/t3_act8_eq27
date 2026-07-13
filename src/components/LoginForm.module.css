@@ -1,5 +1,5 @@
 .container {
-  background-color: #111; /* fondo oscuro */
+  background-color: #242424; /* fondo oscuro */
   color: #fff;
   font-family: 'Anonymous Pro', monospace;
   display: flex;
@@ -9,13 +9,13 @@
   border-radius: 8px;
   width: 350px;
   margin: auto;
-  box-shadow: 0 0 15px #0f0; /* glow verde */
+  box-shadow: 0 0 15px #0BC20B; /* glow verde */
 }
 
 .title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #0f0;
+  color: #0BC20B;
 }
 
 .input {
@@ -29,7 +29,7 @@
 }
 
 .button {
-  background-color: #0f0;
+  background-color: #0BC20B;
   color: #111;
   font-weight: bold;
   padding: 0.8rem;
@@ -50,7 +50,7 @@
 }
 
 .link {
-  color: #0f0;
+  color: #0BC20B;
   font-size: 0.9rem;
   text-decoration: none;
   margin: 0.5rem 0;
@@ -89,6 +89,6 @@
 }
 
 .register span {
-  color: #0f0;
+  color: #0BC20B;
   cursor: pointer;
 }
