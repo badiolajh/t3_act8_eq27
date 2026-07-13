@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Anonymous Pro', monospace;
+  background-color: #f5f5f5;
+}
+
+.left {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.logo {
+  width: 450px;
+}
+
+.right {
+  flex: 1;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* apila en vertical */
+  }
+
+  .left {
+    flex: none;
+    height: 22vh; /* ocupa parte superior */
+  }
+
+  .logo {
+    width: 180px; /* logo más pequeño */
+  }
+
+  .right {
+    flex: none;
+    padding: 1rem;
+  }
+}
