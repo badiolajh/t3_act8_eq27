@@ -14,18 +14,6 @@ import './Componentes/Layout/Usuarios-Frame/Usuarios_F.css'
   const [user, setUser] = useState(null)
   return (
     <div className="app-layout">
-          {/* Este es un comentario de una sola línea en JSX
-          <NavBar />
-
-          <div className="content-area">
-            <SlideBar />
-
-            <main className="main-content">
-              <Usuarios_F />
-        </main>
-      </div>
-      */}
-
           <>
                 {!user ? (
                   <LoginPage onLogin={setUser} />
