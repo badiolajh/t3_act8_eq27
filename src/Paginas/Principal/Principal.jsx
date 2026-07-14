@@ -9,17 +9,17 @@ import NavBar from '../../Componentes/Layout/NavBar/NavBar.jsx';
 import Usuarios_F from '../../Componentes/Layout/Usuarios-Frame/Usuarios_F.jsx';
 
 
-  function Principal() {
+  function Principal({user}) {
   return (
     <div className="app-layout">
 
-          <NavBar />
+      <NavBar user={user} />
 
           <div className="content-area">
             <SlideBar/>
 
             <main className="main-content">
-              <Usuarios_F />
+              <Usuarios_F user={user}/>
         </main>
       </div>
 

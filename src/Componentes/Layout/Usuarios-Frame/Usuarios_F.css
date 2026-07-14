@@ -44,6 +44,10 @@
     min-width: 33dvh;
 }
 
+.Boton-Verde:hover{
+    cursor: pointer;
+}
+
 .tarjeta-cabecera, .tarjeta-cuerpo {
     background-color: #ffffff;
     border-radius: 12px;
@@ -105,11 +109,19 @@
     border: 1px solid #00a82d;
     padding: 5px;
 }
+.btn-editar:hover{
+    cursor: pointer;
+}
+
 .btn-eliminar {
     color: #d9534f;
     background: transparent;
     border: 1px solid #d9534f;
     padding: 5px;
+}
+
+.btn-eliminar:hover{
+    cursor: pointer;
 }
 
 .pie-tabla {

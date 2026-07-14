@@ -3,7 +3,7 @@ import { FaUserCircle } from "react-icons/fa";
 import logo from "../../../assets/Logo-Principal.png";
 
 
-function NavBar() {
+function NavBar({user}) {
   return (
     <nav className='NavBar'>
           <img className="Logo-principal" src={logo} alt='logo del sistema' style={{height: '40px'}} />
@@ -13,7 +13,7 @@ function NavBar() {
           </label>
 
           <button className="Notificaciones"><FaRegMessage /></button>
-          <div className="Usuario">Jonathan   <FaUserCircle className="Foto" /></div>
+      <div className="Usuario">{user ? user.username : "Invitado"}  <FaUserCircle className="Foto" /></div>
         </nav>
   )
 }
