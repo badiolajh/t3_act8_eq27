@@ -23,7 +23,7 @@
 
     width: 394px;
     height: 43px;
-    font-size: 36px;
+    font-size: 30px;
 }
 
 .barra-controles {
@@ -41,6 +41,7 @@
     border: none;
     padding: 8px 15px;
     border-radius: 4px;
+    min-width: 33dvh;
 }
 
 .tarjeta-cabecera, .tarjeta-cuerpo {
