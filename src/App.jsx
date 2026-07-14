@@ -1,16 +1,20 @@
 
+import { useState } from 'react'
+import LoginPage from './pages/LoginPage'
+import { Slide, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import './App.css'
+import Principal from './Paginas/Principal/Principal';
+
 import './Componentes/Layout/SlideBar/SlideBar.css'
 import './Componentes/Layout/NavBar/NavBar.css'
 import './Componentes/Layout/Usuarios-Frame/Usuarios_F.css'
-import './index.css'
-import SlideBar from './Componentes/Layout/SlideBar/SlideBar.jsx'
-import NavBar from './Componentes/Layout/NavBar/NavBar.jsx'
-import Usuarios_F from './Componentes/Layout/Usuarios-Frame/Usuarios_F.jsx'
 
-
-function App() {
+  function App() {
+  const [user, setUser] = useState(null)
   return (
     <div className="app-layout">
+          {/* Este es un comentario de una sola línea en JSX
           <NavBar />
 
           <div className="content-area">
@@ -18,9 +22,21 @@ function App() {
 
             <main className="main-content">
               <Usuarios_F />
-            </main>
-          </div>
-        </div>
+        </main>
+      </div>
+      */}
+
+          <>
+                {!user ? (
+                  <LoginPage onLogin={setUser} />
+                ) : (
+                  //Insertar aqui despues los componentes del dashboard
+                  <Principal/>
+                )}
+                <ToastContainer position="top-right" autoClose={2000} theme="dark" transition={Slide} />
+              </>
+
+    </div>
   );
 }
 export default App;
