@@ -1,81 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-*{
+.slideBar {
+  list-style: none;
   padding: 0;
   margin: 0;
-}
-.slideBar{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    width: 250px;
-    height: 851px;
-    background-color: #1a1a1a;
-    position: relative;
-
-    gap: 35px;
+  width: 250px;
+  height: 100vh;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
 }
 
+ul {
+  list-style: none;
+  padding-left: 37px;
+}
 
-
-/*Texto superior*/
 .textSlideTop {
-    list-style: none;
-    padding-left: 37px;
-    padding-top: 50px;
-    width: 191px;
-    height: 44px;
-
-    left: 37px;
-    right: 50px;
-
+  margin-top: 50px;
 }
 
-.textSlideTop li a{
-    font-family: "Anonymous Pro", monospace;
-}
-
-/*Texto del medio*/
 .textSlideMedio {
-    list-style: none;
-    padding-left: 37px;
-    padding-top: 70px;
-    width: 191px;
-    height: 44px;
-
-    left: 37px;
-    right: 175px;
+  margin-top: 70px;
 }
 
-.textSlideMedio li a{
-    font-family: "Anonymous Pro", monospace;
+.textSlideDown {
+  margin-top: auto;
+  margin-bottom: 100px;
 }
 
-/*Separacion del texto de en medio*/
-.textSlideMedio li{
+.textSlideMedio li {
   margin-bottom: 25px;
 }
 
-/*Texto de hasta abajo*/
-.textSlideDown {
-    list-style: none;
-    padding-left: 37px;
-    padding-top: 550px;
-    width: 191px;
-    height: 44px;
-
-    left: 37px;
-    right: 175px;
-}
-
-.textSlideDown li a{
-    font-family: "Anonymous Pro", monospace;
-}
-
-/*Texto del slide*/
-.slideBar li a{
-    color: #FFFF;
-    text-decoration: none;
-    font-size: 18px;
+.slideBar li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Anonymous Pro", monospace;
 }

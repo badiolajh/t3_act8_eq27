@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.contenedor-Opciones {
+    padding: 40px;
+    font-family: "Anonymous Pro", monospace;
+    background-color: #F4F6F8;
+
+}
+
+.select-estado {
+  font-family: "Anonymous Pro", monospace;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: white;
+  width: 110px;
+  height: 37px;
+}
+
+.Bienvenida{
+    color: #242424;
+
+    width: 394px;
+    height: 43px;
+    font-size: 36px;
+}
+
+.barra-controles {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.Boton-Verde {
+    justify-content: space-between;
+    background-color: #00a82d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.tarjeta-cabecera, .tarjeta-cuerpo {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+
+.tarjeta-cabecera {
+    background-color: #212121;
+    color: white;
+    padding: 0;
+}
+
+.Tabla-Header {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.Tabla-Datos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.Tabla-Header th {
+    padding: 15px;
+    text-align: left;
+    width: 600px;
+    padding-left: 27px;
+    padding-right: 0;
+}
+
+.Tabla-Datos td {
+    padding: 15px;
+    width: 370px;
+    padding-left: 17px;
+    padding-right: 0;
+}
+
+.pie-tabla {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 10px;
+
+}
+.acciones {
+
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-editar {
+    color: #00a82d;
+    background: transparent;
+    border: 1px solid #00a82d;
+    padding: 5px;
+}
+.btn-eliminar {
+    color: #d9534f;
+    background: transparent;
+    border: 1px solid #d9534f;
+    padding: 5px;
+}
+
+.pie-tabla {
+    font-family: "Anonymous Pro", monospace;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.tabla-paginas {
+    background: transparent;
+}
