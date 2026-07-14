@@ -11,20 +11,20 @@ function App() {
 
   return (
     //Pagina de login
-    // <>
-    //   {!user ? (
-    //     <LoginPage onLogin={setUser} />
-    //   ) : (
-    //     //Insertar aqui despues los componentes del dashboard
-    //     <InicioPage/>
-    //   )}
-    //   <ToastContainer position="top-right" autoClose={2000} theme="dark" transition={Slide} />
-    // </>
+    <>
+      {!user ? (
+        <LoginPage onLogin={setUser} />
+      ) : (
+        //Insertar aqui despues los componentes del dashboard
+        <InicioPage/>
+      )}
+      <ToastContainer position="top-right" autoClose={2000} theme="dark" transition={Slide} />
+    </>
 
     //Prueba del componente UsuarioForm
-    <>
-      <UsuarioForm/>
-    </>
+    // <>
+    //   <UsuarioForm/>
+    // </>
 
   )
 }
