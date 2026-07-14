@@ -3,7 +3,7 @@ import { useState, useEffect} from "react";
 function Usuarios_Frame({ user }) {
   const [usuarios, setUsuarios] = useState([]);
   const [paginaActual, setPaginaActual] = useState(1);
-  const [registrosPorPagina, setRegistrosPorPagina] = useState(7);
+  const [registrosPorPagina, setRegistrosPorPagina] = useState(5);
   const [busqueda, setBusqueda] = useState("");
   const [filtroRol, setFiltroRol] = useState("Todos");
 

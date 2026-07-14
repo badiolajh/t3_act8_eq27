@@ -29,13 +29,26 @@
 .barra-controles {
     display: flex;
     gap: 15px;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
 
+.barra-controles .Buscar{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 0;
+    padding-right: 15px;
+    flex: 0 0 40%;
+}
+
+
+
 
 .Boton-Verde {
-    justify-content: space-between;
+    margin-left: auto;
     background-color: #00a82d;
     color: white;
     border: none;
@@ -50,11 +63,12 @@
 
 .tarjeta-cabecera, .tarjeta-cuerpo {
     background-color: #ffffff;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     margin-bottom: 20px;
 }
+
 
 
 .tarjeta-cabecera {
