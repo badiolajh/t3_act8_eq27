@@ -19,7 +19,7 @@ import './Componentes/Layout/Usuarios-Frame/Usuarios_F.css'
                   <LoginPage onLogin={setUser} />
                 ) : (
                   //Insertar aqui despues los componentes del dashboard
-            <Principal user={user} />
+                  <Principal user={user} />
                 )}
                 <ToastContainer position="top-right" autoClose={2000} theme="dark" transition={Slide} />
               </>
