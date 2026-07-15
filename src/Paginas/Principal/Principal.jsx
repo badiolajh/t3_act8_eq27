@@ -2,7 +2,7 @@
 import '../../Componentes/Layout/SlideBar/SlideBar.css';
 import '../../Componentes/Layout/NavBar/NavBar.css';
 import '../../Componentes/Layout/Usuarios-Frame/Usuarios_F.css';
-import './Principal.css'; // Since this is in the same folder as Principal.jsx, use ./
+import './Principal.css';
 
 import SlideBar from '../../Componentes/Layout/SlideBar/SlideBar.jsx';
 import NavBar from '../../Componentes/Layout/NavBar/NavBar.jsx';

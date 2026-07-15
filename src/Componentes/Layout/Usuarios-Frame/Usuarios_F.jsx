@@ -1,14 +1,23 @@
-import { FiEdit } from "react-icons/fi"; //icono de edit en boton
-import { FaRegTrashAlt } from "react-icons/fa"; //icono basura en boton
-
+import { useSearchParams } from "react-router-dom";
+import { FiEdit } from "react-icons/fi";
+import { FaRegTrashAlt } from "react-icons/fa";
 import { useState, useEffect } from "react";
+
+import UserModal from "../UserModal/UserModal";
 
 function Usuarios_Frame({ user }) {
   const [usuarios, setUsuarios] = useState([]);
-  const [paginaActual, setPaginaActual] = useState(1);
   const [registrosPorPagina, setRegistrosPorPagina] = useState(5);
   const [busqueda, setBusqueda] = useState("");
   const [filtroRol, setFiltroRol] = useState("Todos");
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  //Inicializa useSearchParams
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  //Lee la página desde la URL (o default a 1)
+  const paginaActual = parseInt(searchParams.get("page")) || 1;
 
   useEffect(() => {
     fetch("https://dummyjson.com/users?limit=30")
@@ -21,17 +30,26 @@ function Usuarios_Frame({ user }) {
     const coincideBusqueda =
       u.firstName.toLowerCase().includes(busqueda.toLowerCase()) ||
       u.email.toLowerCase().includes(busqueda.toLowerCase());
-
     const coincideRol =
       filtroRol === "Todos" || (u.role || "user") === filtroRol.toLowerCase();
-
     return coincideBusqueda && coincideRol;
   });
+
+  const totalPaginas = Math.ceil(usuariosFiltrados.length / registrosPorPagina) || 1;
+
+  //Función para cambiar página y actualizar URL
+  const cambiarPagina = (nuevaPagina) => {
+    setSearchParams({ page: nuevaPagina });
+  };
 
   const indiceUltimo = paginaActual * registrosPorPagina;
   const indicePrimero = indiceUltimo - registrosPorPagina;
   const usuariosPagina = usuariosFiltrados.slice(indicePrimero, indiceUltimo);
-  const totalPaginas = Math.ceil(usuariosFiltrados.length / registrosPorPagina) || 1;
+
+  const agregarUsuarioALista = (nuevoUsuario) => {
+       setUsuarios([nuevoUsuario, ...usuarios]);
+    };
+
   return (
     <div className="contenedor-Opciones">
           <h1 className="Bienvenida">Bienvenid@ <span>{user ? user.username : "Usuario"}</span></h1>
@@ -45,7 +63,7 @@ function Usuarios_Frame({ user }) {
                 value={busqueda}
                 onChange={(e) => {
                   setBusqueda(e.target.value);
-                  setPaginaActual(1);
+                  cambiarPagina(1);
                 }}
               />
             </label>
@@ -55,7 +73,7 @@ function Usuarios_Frame({ user }) {
               value={filtroRol}
               onChange={(e) => {
                 setFiltroRol(e.target.value);
-                setPaginaActual(1);
+                cambiarPagina(1);
               }}
             >
               <option value="Todos">Todos</option>
@@ -64,7 +82,9 @@ function Usuarios_Frame({ user }) {
               <option value="moderator">Moderator</option>
             </select>
 
-            <button className="Boton-Verde">Agregar Usuario</button>
+            <button className="Boton-Verde" onClick={() => setIsModalOpen(true)}>
+                  Agregar Usuario
+                </button>
           </div>
 
           <div className="tarjeta-cabecera">
@@ -96,10 +116,18 @@ function Usuarios_Frame({ user }) {
                 </table>
 
                     <div className="pie-tabla">
-                              <div className="tabla-paginas">
-                                <button disabled={paginaActual === 1} onClick={() => setPaginaActual(p => p - 1)}>&lt;</button>
-                                <span>{paginaActual} de {totalPaginas} </span>
-                                <button disabled={paginaActual === totalPaginas} onClick={() => setPaginaActual(p => p + 1)}>&gt;</button>
+                      <div className="tabla-paginas">
+                                <button
+                                  disabled={paginaActual === 1}
+                                  onClick={() => cambiarPagina(paginaActual - 1)}
+                                >&lt;</button>
+
+                                <span> Pág {paginaActual} de {totalPaginas} </span>
+
+                                <button
+                                  disabled={paginaActual === totalPaginas}
+                                  onClick={() => cambiarPagina(paginaActual + 1)}
+                                >&gt;</button>
                               </div>
 
                               <label>Mostrar:
@@ -107,7 +135,7 @@ function Usuarios_Frame({ user }) {
                                   value={registrosPorPagina}
                                   onChange={(e) => {
                                     setRegistrosPorPagina(Number(e.target.value));
-                                    setPaginaActual(1);
+                                    cambiarPagina(1);
                                   }}
                                 >
                                   <option value={5}>5</option>
@@ -116,7 +144,12 @@ function Usuarios_Frame({ user }) {
                                 </select> Registros
                               </label>
                             </div>
-          </div>
+      </div>
+      <UserModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            title="Registro de usuario"
+          />
         </div>
   )
 }
