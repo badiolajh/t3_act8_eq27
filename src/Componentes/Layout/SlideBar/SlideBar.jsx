@@ -1,21 +1,25 @@
-function SlideBar() {
+import { Link } from "react-router-dom";
+
+function SlideBar({ onLogout }) {
   return (
     <nav className="slideBar">
           <ul className="textSlideTop">
-            <li><a href="Dashboard">Dashboard</a></li>
+              <li><Link to="/dashboard">Dashboard</Link></li>
           </ul>
-
           <ul className="textSlideMedio">
-            <li><a href="Usuarios">Usuarios</a></li>
-            <li><a href="Productos">Productos</a></li>
-            <li><a href="Ventas">Ventas</a></li>
-            <li><a href="Reportes">Reportes</a></li>
+            <li><Link to="/usuarios">Usuarios</Link></li>
+            <li><Link to="/productos">Productos</Link></li>
+            <li><Link to="/ventas">Ventas</Link></li>
+            <li><Link to="/reportes">Reportes</Link></li>
           </ul>
-
           <ul className="textSlideDown">
-            <li><a href="Configuracion">Configuracion</a></li>
-            <li><a href="Cerrar session">Cerrar sesión</a></li>
-          </ul>
+                  <li><Link to="/configuracion">Configuración</Link></li>
+                  <li>
+                    <button className="btn-logout" onClick={onLogout}>
+                      Cerrar sesión
+                    </button>
+                  </li>
+                </ul>
         </nav>
   )
 }

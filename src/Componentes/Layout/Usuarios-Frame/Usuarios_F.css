@@ -111,40 +111,96 @@
 
 }
 .acciones {
-
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
+
+.acciones-boton {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 17px;
+        font-size: 20px;
+}
+
 .btn-editar {
+    font-family: "Anonymous Pro", monospace;
     color: #00a82d;
+    padding: 4px 10px;
     background: transparent;
     border: 1px solid #00a82d;
     padding: 5px;
+    border-radius: 4px;
 }
 .btn-editar:hover{
+    background:#F4F6F8;
     cursor: pointer;
 }
 
 .btn-eliminar {
-    color: #d9534f;
+    font-family: "Anonymous Pro", monospace;
+    color: #00a82d;
+    padding: 4px 10px;
     background: transparent;
-    border: 1px solid #d9534f;
+    border: 1px solid #00a82d;
     padding: 5px;
+    border-radius: 4px;
+
 }
 
 .btn-eliminar:hover{
+    background:#F4F6F8;
     cursor: pointer;
 }
 
-.pie-tabla {
-    font-family: "Anonymous Pro", monospace;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+.pie-tabla label {
+  font-family: "Anonymous Pro", monospace;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.pie-tabla select {
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-family: "Anonymous Pro", monospace;
+  transition: border-color 0.2s;
+}
+
+.pie-tabla select:hover,
+.pie-tabla select:focus {
+  outline: none;
 }
 
 .tabla-paginas {
+    display: flex;
+      align-items: center;
+      gap: 10px;
     background: transparent;
+    font-size: 16px;
+}
+
+.tabla-paginas button {
+    font-size: 15px;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tabla-paginas button:hover:not(:disabled) {
+  background: #e0e0e0;
+  border-color: #999;
+}
+
+.tabla-paginas button:disabled {
+  opacity: 0.3;
 }

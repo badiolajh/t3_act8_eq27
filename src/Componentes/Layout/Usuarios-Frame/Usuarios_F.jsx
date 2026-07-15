@@ -1,4 +1,7 @@
-import { useState, useEffect} from "react";
+import { FiEdit } from "react-icons/fi"; //icono de edit en boton
+import { FaRegTrashAlt } from "react-icons/fa"; //icono basura en boton
+
+import { useState, useEffect } from "react";
 
 function Usuarios_Frame({ user }) {
   const [usuarios, setUsuarios] = useState([]);
@@ -14,7 +17,6 @@ function Usuarios_Frame({ user }) {
       .catch((error) => console.error("Error:", error));
   }, []);
 
-  // 1. Filtrado (se ejecuta siempre que cambie busqueda, filtroRol o usuarios)
   const usuariosFiltrados = usuarios.filter((u) => {
     const coincideBusqueda =
       u.firstName.toLowerCase().includes(busqueda.toLowerCase()) ||
@@ -26,7 +28,6 @@ function Usuarios_Frame({ user }) {
     return coincideBusqueda && coincideRol;
   });
 
-  // 2. Paginación (calculada sobre los resultados ya filtrados)
   const indiceUltimo = paginaActual * registrosPorPagina;
   const indicePrimero = indiceUltimo - registrosPorPagina;
   const usuariosPagina = usuariosFiltrados.slice(indicePrimero, indiceUltimo);
@@ -44,7 +45,7 @@ function Usuarios_Frame({ user }) {
                 value={busqueda}
                 onChange={(e) => {
                   setBusqueda(e.target.value);
-                  setPaginaActual(1); // Resetear a página 1 al buscar
+                  setPaginaActual(1);
                 }}
               />
             </label>
@@ -66,7 +67,6 @@ function Usuarios_Frame({ user }) {
             <button className="Boton-Verde">Agregar Usuario</button>
           </div>
 
-          {/* Tarjeta 1: Encabezado */}
           <div className="tarjeta-cabecera">
             <table className="Tabla-Header">
               <thead>
@@ -80,15 +80,15 @@ function Usuarios_Frame({ user }) {
           <div className="tarjeta-cuerpo">
             <table className="Tabla-Datos">
                   <tbody>
-                    {/* IMPORTANTE: Debes mapear 'usuariosPagina', no 'usuarios' */}
+
                     {usuariosPagina.map((u) => (
                       <tr key={u.id}>
                         <td>{u.firstName} {u.lastName}</td>
                         <td>{u.email}</td>
                         <td>{u.role || "user"}</td>
-                        <td className="acciones">
-                          <button className="btn-editar">Editar</button>
-                          <button className="btn-eliminar">Eliminar</button>
+                        <td className="acciones-boton">
+                          <button className="btn-editar"><FiEdit /> Editar</button>
+                          <button className="btn-eliminar"><FaRegTrashAlt /> Eliminar</button>
                         </td>
                       </tr>
                     ))}
@@ -98,7 +98,7 @@ function Usuarios_Frame({ user }) {
                     <div className="pie-tabla">
                               <div className="tabla-paginas">
                                 <button disabled={paginaActual === 1} onClick={() => setPaginaActual(p => p - 1)}>&lt;</button>
-                                <span> Pág {paginaActual} de {totalPaginas} </span>
+                                <span>{paginaActual} de {totalPaginas} </span>
                                 <button disabled={paginaActual === totalPaginas} onClick={() => setPaginaActual(p => p + 1)}>&gt;</button>
                               </div>
 
@@ -107,7 +107,7 @@ function Usuarios_Frame({ user }) {
                                   value={registrosPorPagina}
                                   onChange={(e) => {
                                     setRegistrosPorPagina(Number(e.target.value));
-                                    setPaginaActual(1); // Volvemos a la página 1 al cambiar registros
+                                    setPaginaActual(1);
                                   }}
                                 >
                                   <option value={5}>5</option>

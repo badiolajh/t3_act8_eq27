@@ -39,3 +39,22 @@ ul {
   font-size: 18px;
   font-family: "Anonymous Pro", monospace;
 }
+
+.en-proceso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  color: #1a1a1a;
+  font-family: "Anonymous Pro", monospace;
+}
+
+.btn-logout {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Anonymous Pro", monospace;
+  padding: 0;
+}
